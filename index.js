@@ -8,6 +8,8 @@ let date = new Date();
 let folderPrefix = getFolderPrefix(date);
 console.log("Starting log prefix:", folderPrefix);
 
+const urls = require("./urls.json")
+
 fetchAll();
 setInterval(fetchAll, 60 * 1000);
 
@@ -72,8 +74,6 @@ function getStatus(s) {
       return "9"
   }
 }
-
-const urls = require("./urls.json")
 
 async function fetchAll() {
   now = Date.now();
