@@ -49,8 +49,8 @@ function getStream(prefixKey) {
 function formatVehicle(vec, oldVec) {
   return [
     vec.id,
-    (38 - vec.lat).toFixed(5),
-    (9 + vec.lon).toFixed(5),
+    ((vec.lat - 38) < 0 ? Math.abs((vec.lat - 38)) + 1 : (vec.lat - 38)).toFixed(5),
+    ((vec.lon + 9) < 0 ? Math.abs((vec.lon + 9)) + 1 : (vec.lon + 9)).toFixed(5),
     (vec.speed * 3.6).toFixed(1),
     vec.bearing,
     vec.stop_id,
